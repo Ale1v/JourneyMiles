@@ -1,0 +1,639 @@
+<!DOCTYPE html
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="icon" href="logo-expo  (2).png" type="image/png">
+
+    <script src="https://kit.fontawesome.com/YOUR_FONT_AWESOME_KIT_URL.js" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --azul-principal: #3a59d1;
+            --azul-claro: #f0f4ff;
+            --texto-oscuro: #333;
+            --texto-medio: #666;
+            --fondo-claro: #f9f9f9;
+            --blanco: #fff;
+        }
+
+        body {
+            font-family: sans-serif;
+            background-color: var(--fondo-claro);
+            color: var(--texto-oscuro);
+            line-height: 1.6;
+            overflow-x: hidden;
+           
+            padding-top: 80px; 
+            padding: 4rem 0;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        .texto-azul-principal {
+            color: var(--azul-principal) !important;
+        }
+
+        .fondo-azul-claro {
+            background-color: var(--azul-claro) !important;
+        }
+
+        .redondeado-xl {
+            border-radius: 1rem !important;
+        }
+
+        h2 {
+            font-size: 2.9rem;
+            font-weight: 690;
+            color: var(--azul-principal);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--azul-principal);
+            margin-bottom: 2.5rem;
+        }
+
+        p {
+            font-size: 1rem;
+            max-width: 700px;
+            margin: 0 auto 1.5rem auto;
+            justify-content: left;
+        }
+
+        .destacado {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--texto-medio);
+            margin-bottom: 1rem;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--azul-claro) 0%, var(--blanco) 100%);
+            padding: 6rem 0;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero .contenedor-imagen-hero {
+            padding: 0.5rem;
+        }
+
+        .hero .contenedor-imagen-hero img {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .imagen-centrada {
+            max-width: 600px;
+            margin: 2rem auto;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        }
+
+     
+        .seccion-con-imagen .col-lg-6:nth-child(even) {
+            order: 1; 
+        }
+        .seccion-con-imagen .col-lg-6:nth-child(odd) {
+            order: 2; 
+        }
+        .seccion-con-imagen .col-lg-6:first-child {
+            order: unset; 
+        }
+
+        .tarjeta-mision-vision, .miembro-equipo, .item-valor {
+            background-color: var(--blanco);
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+            padding: 2rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .tarjeta-mision-vision:hover, .miembro-equipo:hover, .item-valor:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        .tarjeta-mision-vision i, .item-valor i {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--azul-principal);
+        }
+        .tarjeta-mision-vision h4, .item-valor h4, .miembro-equipo h4 {
+            font-size: 1.6rem;
+            color: var(--azul-principal);
+            margin-bottom: 0.7rem;
+        }
+
+        .seccion-contenido ul li {
+            font-size: 1rem;
+            margin-bottom: 0.6rem;
+        }
+        .seccion-contenido ul li i {
+            font-size: 1.2rem;
+            margin-right: 0.8rem;
+            color: var(--azul-principal);
+        }
+
+        .seccion-imagen-col {
+            padding: 0.5rem;
+        }
+        .seccion-imagen-col img {
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        }
+
+        @keyframes aparecerArriba { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes aparecerDerecha { from { opacity: 0; transform: translateX(15px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes aparecerEscala { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
+        @keyframes aparecer { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes aparecerIzquierda { from { opacity: 0; transform: translateX(-15px); } to { opacity: 1; transform: translateX(0); } }
+
+
+        @media (max-width: 991px) {
+            .hero h2 { font-size: 2.8rem; }
+            .hero .destacado { font-size: 1.1rem; }
+            h3 { font-size: 2rem; margin-bottom: 2rem;}
+            p { font-size: 0.95rem; }
+            .seccion-padding { padding: 3rem 0; }
+            .tarjeta-mision-vision, .miembro-equipo, .item-valor { padding: 1.5rem; margin-bottom: 1rem; }
+            .tarjeta-mision-vision h4, .item-valor h4 { font-size: 1.4rem; }
+            .tarjeta-mision-vision i, .item-valor i { font-size: 2rem; }
+            .miembro-equipo img { width: 80px; height: 80px; }
+
+         
+            .seccion-con-imagen .col-lg-6:nth-child(even),
+            .seccion-con-imagen .col-lg-6:nth-child(odd) {
+                order: unset !important; 
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero h2 { font-size: 2.2rem; }
+            .hero .destacado { font-size: 1rem; }
+            h3 { font-size: 1.8rem; }
+            p { font-size: 0.9rem; }
+            .seccion-padding { padding: 2.5rem 0; }
+            .imagen-centrada { max-width: 100%; margin: 1.5rem auto; }
+            .miembro-equipo, .item-valor, .tarjeta-mision-vision { margin-bottom: 1.25rem; }
+        }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #333;
+}
+    header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 22px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
+}
+
+.logo img {
+  height: 65px;
+
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color:   #3a59d1;
+  font-weight: 500;
+  transition: color 0.3s;
+  font-size: 20px;
+  justify-content: space-between;
+}
+
+nav a:hover {
+  color: #7ac6d2;
+}
+
+.login-btn button {
+  background: none;
+  border: 2px solid #1a3dab;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  color: #1a3dab;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.3s;
+}
+
+.login-btn button:hover {
+  background: #3a59d1;
+  color: white;
+}
+
+.icon {
+  font-family: sans-serif;
+  font-weight: bold;
+  margin: 0 8px;
+  text-decoration: none;
+  color: #fff;
+}
+    
+        footer {
+            background-color: var(--azul-principal); 
+            color: var(--blanco);
+            padding: 40px 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        footer h3 {
+            color: var(--blanco);
+            margin-bottom: 15px;
+            font-size: 1.8rem; 
+            font-weight: 700;
+        }
+        footer h4 {
+            color: var(--blanco);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        footer p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--blanco); 
+            margin-bottom: 10px;
+            max-width: none; 
+        }
+        footer a {
+            color: var(--blanco);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: var(--azul-claro);
+        }
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            line-height: 2;
+        }
+        footer .social-icons a {
+            margin-right: 15px;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        footer .social-icons a:hover {
+            transform: translateY(-3px);
+            color: var(--azul-claro);
+        }
+        footer hr {
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 30px 0;
+        }
+        footer .container > div {
+            flex: 1 1 auto;
+            min-width: 200px; 
+        }
+        @media (max-width: 768px) {
+            footer .container {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            footer .container > div {
+                min-width: unset; 
+            }
+            footer .social-icons {
+                margin-top: 15px;
+                display: flex;
+                justify-content: center;
+            }
+            footer .social-icons a {
+                margin: 0 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <div class="logo">
+      <img src="img/logo-expo.png" alt="Journey Miles Logo" />
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../JourneyD/IndexD.html">Home</a></li>
+        <li><a href="../JourneyD/IndexVuelo.html">Flights</a></li>
+        <li><a href="../hotel-booking/indexhoteles.html">Hotels</a></li>
+        <li><a href="about_index.html">About Us</a></li>
+      </ul>
+    </nav>
+      <div class="login-btn">
+      <a href="../formulario.html">
+      <button><i class="fas fa-user"></i>Login</button>
+      </a>
+    </div>
+  </header>
+
+
+  <style>
+    
+  </style>
+    <main>
+        <section id="hero" class="hero text-center seccion-padding">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0 text-lg-start">
+                        <h2 class="letraaa">Your Journey, Our Passion.</h2>
+                        <p class="destacado">We create unforgettable experiences, tailored just for you.</p>
+                        <p>At Journey Miles, we don't just organize trips; we fulfill dreams. With a team of passionate travelers, we guarantee smooth and memorable adventures.</p>
+                    </div>
+                    <div class="col-lg-6 contenedor-imagen-hero">
+                        <img src="img/tursimo.webp" class="img-fluid redondeado-xl" alt="Travelers enjoying an exotic landscape" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre-nosotros" class="seccion-padding seccion-contenido seccion-con-imagen">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0 text-center text-lg-start">
+                        <h3>Behind Every Adventure</h3>
+                        <p>Born from a love for exploring the world. We are your bridge to amazing destinations, building lasting relationships and being your trusted advisors.</p>
+                    </div>
+                    <div class="col-lg-6 order-lg-1 seccion-imagen-col">
+                        <img src="img/pexels-leah-newhouse-50725-185933.jpg" class="img-fluid redondeado-xl" alt="World map and travel elements" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="mision-vision" class="seccion-padding fondo-azul-claro text-center">
+            <div class="container">
+                <div class="row g-4 mt-4 justify-content-center">
+                    <div class="col-md-6">
+                        <div class="tarjeta-mision-vision" style="--delay: 0.1s;">
+                            <i class="fas fa-bullseye fa-3x mb-3 texto-azul-principal"></i>
+                            <h4>Mission</h4>
+                            <p>Empower every traveler with the tools and confidence to explore the world without limits. We simplify every step.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="tarjeta-mision-vision" style="--delay: 0.2s;">
+                            <i class="fas fa-eye fa-3x mb-3 texto-azul-principal"></i>
+                            <h4>Vision</h4>
+                            <p>To be the preferred global travel companion, recognized for our innovation, reliability, and unwavering passion.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </section>
+<br>
+        <section id="por-que-elegirnos" class="seccion-padding seccion-contenido seccion-con-imagen">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0 text-center text-lg-start">
+                        <h3>They Choose Us Because...</h3>
+                        <ul class="list-unstyled text-start mx-auto" style="max-width: 600px">
+                            <li class="mb-2"><i class="fas fa-globe-americas texto-azul-principal me-2"></i><strong>World at Your Fingertips</strong> </li>
+                            <li class="mb-2"><i class="fas fa-palette texto-azul-principal me-2"></i><strong>Tailored Trips</strong> </li>
+                            <li class="mb-2"><i class="fas fa-life-ring texto-azul-principal me-2"></i><strong>24/7 Support</strong></li>
+                            <li class="mb-2"><i class="fas fa-mobile-alt texto-azul-principal me-2"></i><strong>Intuitive Platform</strong></li>
+                            <li class="mb-2"><i class="fas fa-hands-helping texto-azul-principal me-2"></i><strong>Guaranteed Quality</strong></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 seccion-imagen-col">
+                        <img src="img/cerro.jpeg" class="img-fluid redondeado-xl" alt="Team collaborating and planning trips" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <section style="padding: 40px 20px; background-color: #f9f9f9; font-family: sans-serif;">
+      <div style="max-width: 1000px; margin: auto;">
+        <h2 style="text-align: center; font-size: 2rem; color: #3A59D1; margin-bottom: 30px;">What Our Customers Say</h2>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+          <div style="flex: 1 1 280px; background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px #b1aeae;">
+            <p>“Booking with Journey Miles was the best decision I made for my trip to Europe!”</p>
+            <p style="text-align: right; font-weight: bold;">– Ana M.</p>
+          </div>
+          <div style="flex: 1 1 280px; background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px #b1aeae;">
+            <p>“Everything was so easy, I had my flights and hotel confirmed in minutes.”</p>
+            <p style="text-align: right; font-weight: bold;">– Carlos R.</p>
+          </div>
+          <div style="flex: 1 1 280px; background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px #b1aeae;">
+            <p>“Journey Miles helped me plan the perfect honeymoon. I highly recommend them!”</p>
+            <p style="text-align: right; font-weight: bold;">– Luisa F.</p>
+          </div>
+        </div>
+
+        <div style="margin-top: 40px; background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px #b1aeae;">
+          <h3 style="color: #3A59D1;">Leave a Review</h3>
+          <form>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px;">
+
+            <label for="comment">Your Comment:</label>
+            <textarea id="comment" name="comment" rows="4" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+
+            <button type="submit" style="margin-top: 15px; background-color: #3c4c8d; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+       
+
+        <section id="valores" class="seccion-padding text-center">
+            <div class="container">
+                <h3>Our Values</h3>
+                <p>They are the DNA of Journey Miles, guiding every decision and interaction.</p>
+                <div class="row g-4 mt-4 justify-content-center">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="item-valor" style="--delay: 0.1s;">
+                            <i class="fas fa-user fa-3x mb-3 texto-azul-principal"></i>
+                            <h4>Client First</h4>
+                            <p>Your satisfaction is our top priority.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="item-valor" style="--delay: 0.2s;">
+                            <i class="fas fa-lightbulb fa-3x mb-3 texto-azul-principal"></i>
+                            <h4>Innovation</h4>
+                            <p>Smarter, faster, and more exciting travels.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="item-valor" style="--delay: 0.3s;">
+                            <i class="fas fa-shield-alt fa-3x mb-3 texto-azul-principal"></i>
+                            <h4>Reliability</h4>
+                            <p>Your partner for a safe and transparent experience.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="item-valor" style="--delay: 0.4s;">
+                            <i class="fas fa-heart fa-3x mb-3 texto-azul-principal"></i>
+                            <h4>Passion</h4>
+                            <p>We love what we do, and that passion is contagious.</p>
+                    
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--Contact Us-->
+<section style="padding: 40px 20px; background-color: #f9f9f9; font-family: Arial, sans-serif;">
+  <div style="max-width: 600px; margin: auto; background: white; padding: 25px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+    <h3 style="text-align: center; color: #3A59D1; margin-bottom: 40px;">Contact Us</h3>
+    <form>
+      <label for="name" style="display:block; margin-bottom: 5px; font-weight: bold;">Full Name</label>
+      <input type="text" id="name" name="name" required 
+             style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px;">
+
+      <label for="email" style="display:block; margin-bottom: 5px; font-weight: bold;">Email</label>
+      <input type="email" id="email" name="_replyto" required
+             style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px;">
+
+      <label for="message" style="display:block; margin-bottom: 5px; font-weight: bold;">Message</label>
+      <textarea id="message" name="message" rows="5" required
+                style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+      
+      <button type="submit" 
+              style="width: 100%; padding: 12px; background-color: #3A59D1; color: white; border: none; border-radius: 5px; font-size: 1rem; cursor: pointer;">
+        Send Message
+      </button>
+    </form>
+  </div>
+</section>
+
+    <!--footer-->
+<footer style="background-color: #3c4c8d; color: white; padding: 40px 20px; font-family: sans-serif;">
+  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px;">
+    <div style="flex: 1 1 350px;width: 150px;">
+      <h3 style="margin-bottom: 0px; font-size: 1.2rem;margin-left: 0px;">Journey Miles</h3>
+      <p style="margin: 0; line-height: 1.9;color:white;padding-top: 5px;margin-left: 0px;">
+        Your best ally for booking <strong>flights</strong>,<strong>hotels</strong>
+        ,and packages
+        <br>
+        <strong>just in one click</strong>.
+      </p>
+    </div>
+    <div style="flex: 1 1 110px;">
+<img src="img/logo-expo.png" style="height: 90px;width: 90px;align-items: center;margin-top: 10px;">
+    </div>
+   
+    <div style="flex: 1 1 150px;">
+      <h4 style="margin-bottom: 10px; font-size: 1.1rem;">Contact Us</h4>
+      <p style="margin: 5px 0;color:white;">You can follow us for more updates and offers</p>
+      <!-- Redes sociales -->
+      <div style="margin-top: 15px;">
+        <a href="https://www.facebook.com/profile.php?id=61578978981952&mibextid=ZbWKwL" class="icon" style="color: white; margin-right: 10px; font-size: 1.2rem;padding-top: 40px;">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/journey._.miles?igsh=MTE5djgyNWFtNWkzeg=="  class="icon" style="color: white; margin-right: 10px; font-size: 1.2rem;padding-top: 40px;">
+          <i class="fab fa-instagram"></i>
+        <a href="https://x.com/JourneyMiles20?t=TZRrLciJ--6ZsFZ_HCcwTg&s=09" class="icon" style="color: white; margin-right: 10px; font-size: 1.2rem;">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.tiktok.com/@journey.miles3?_t=ZM-8yMjxM4UCSz&_r=1" class="icon" style="color: white; font-size: 1.2rem;padding-top: 40px;">
+          <i class="fab fa-tiktok"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+  <div style="align-content: center;">
+    <p style="text-align: center;margin-top: 20px;">2025 <strong>Journey Miles</strong>. All rights reserved.</p>
+</div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const opcionesObservador = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const secciones = document.querySelectorAll('section');
+
+            const observadorSeccion = new IntersectionObserver((entradas, observador) => {
+                entradas.forEach(entrada => {
+                    if (entrada.isIntersecting) {
+                        const elementosAAnimar = entrada.target.querySelectorAll('h2, h3, p, .destacado, .btn, .img-fluid, .miembro-equipo, .item-valor, .tarjeta-mision-vision, li');
+                        elementosAAnimar.forEach((el, index) => {
+                            el.style.animation = 'none';
+                            void el.offsetWidth;
+                            if (el.matches('h2, h3, p, .destacado, .btn, .img-fluid')) {
+                                el.style.animation = `aparecerArriba 0.8s ease-out forwards ${0.1 + index * 0.08}s`;
+                            } else if (el.matches('.miembro-equipo, .item-valor, .tarjeta-mision-vision')) {
+                                el.style.animation = `aparecerArriba 0.8s ease-out forwards var(--delay)`;
+                            } else if (el.matches('li')) {
+                                el.style.animation = `aparecerDerecha 0.7s ease-out forwards ${0.15 + index * 0.07}s`;
+                            }
+                        });
+                        observador.unobserve(entrada.target);
+                    }
+                });
+            }, opcionesObservador);
+
+            secciones.forEach(seccion => {
+                observadorSeccion.observe(seccion);
+            });
+
+            const imagenHero = document.querySelector('.contenedor-imagen-hero img');
+            if (imagenHero) {
+                imagenHero.style.animation = 'none';
+                void imagenHero.offsetWidth;
+                imagenHero.style.animation = `aparecerEscala 1s ease-out forwards 0.6s`;
+            }
+
+           
+            const navbarToggle = document.querySelector('.navbar-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (navbarToggle && navLinks) {
+                navbarToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

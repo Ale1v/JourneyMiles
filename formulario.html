@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="logo-expo  (2).png" type="image/png">
+  <title>Login</title>
+  <style>
+
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 0.1rem 5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 73px;
+
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+a{
+    text-decoration: none;
+}
+
+nav a {
+  text-decoration: none;
+  color:   #3a59d1;
+  font-weight: 500;
+  transition: color 0.3s;
+  font-size: 20px;
+  justify-content: space-between;
+}
+
+nav a:hover {
+  color: #7ac6d2;
+}
+
+.login-btn button {
+  background: none;
+  border: 2px solid #1a3dab;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  color: #1a3dab;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.3s;
+}
+
+.login-btn button:hover {
+  background: #3a59d1;
+  color: white;
+}
+
+.icon {
+  font-family: sans-serif;
+  font-weight: bold;
+  margin: 0 8px;
+  text-decoration: none;
+  color: #fff;
+}
+
+    .container {
+      width: 350px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    input {
+      width: 95%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      background: #3c4c8d;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background: #3c4c8c;
+    }
+    .toggle {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+    .toggle span {
+      color: #3c4c8d;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    #boton {
+      color: #fff;
+    }
+    #boton :hover{
+      color: #fff;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+   <!--Navar-->
+      <header>
+    <div class="logo">
+      <img src="logo-expoJ.png" alt="Journey Miles Logo" />
+    </div>
+    <nav>
+        <ul>
+        <li><a href="JourneyD/IndexD.html">Home</a></li>
+        <li><a href="JourneyD/IndexVuelo.html">Flights</a></li>
+        <li><a href="hotel-booking/indexhoteles.html">Hotels</a></li>
+        <li><a href="aboutus_jm/about_index.html">About Us</a></li>
+      </ul>
+    </nav>
+       <div class="login-btn">
+      <a href="formulario.html">
+      <button><i class="fas fa-user"></i> Login</button>
+      </a>
+    </div>
+  </header>
+  <!--Termina-->
+
+  <div class="container">
+    <!-- Formulario de Login -->
+    <div id="loginForm">
+      <h2>Login</h2>
+      <input type="text" id="loginUser" placeholder="User" required>
+      <input type="password" id="loginPass" placeholder="Password" required>
+      <button onclick="login()"><a id="boton"href="hotel-booking/indexhoteles.html">Login</a></button>
+      <div class="toggle">You don't have an account? <span onclick="showRegister()">Sign in</span></div>
+    </div>
+
+    <!-- Formulario de Registro -->
+    <div id="registerForm" class="hidden">
+      <h2>Sign in</h2>
+      <input type="text" id="regUser" placeholder="Usuario" required>
+      <input type="email" id="regEmail" placeholder="Correo" required>
+      <input type="password" id="regPass" placeholder="Contraseña" required>
+      <button onclick="register()">Sign in</button>
+      <div class="toggle">Do you already have an account?<span onclick="showLogin()">Login</span></div>
+    </div>
+  </div>
+
+  <script>
+    // Mostrar Registro
+    function showRegister() {
+      document.getElementById("loginForm").classList.add("hidden");
+      document.getElementById("registerForm").classList.remove("hidden");
+    }
+    // Mostrar Login
+    function showLogin() {
+      document.getElementById("registerForm").classList.add("hidden");
+      document.getElementById("loginForm").classList.remove("hidden");
+    }
+
+    // Registro
+    function register() {
+      let user = document.getElementById("regUser").value;
+      let email = document.getElementById("regEmail").value;
+      let pass = document.getElementById("regPass").value;
+
+      if (user === "" || email === "" || pass === "") {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      let users = JSON.parse(localStorage.getItem("users")) || [];
+      
+      // Verificar si el usuario ya existe
+      if (users.find(u => u.user === user)) {
+        alert("That user already exists.");
+        return;
+      }
+
+      users.push({ user, email, pass });
+      localStorage.setItem("users", JSON.stringify(users));
+      showLogin();
+    }
+
+    // Login
+    function login() {
+      let user = document.getElementById("loginUser").value;
+      let pass = document.getElementById("loginPass").value;
+
+      let users = JSON.parse(localStorage.getItem("users")) || [];
+      let validUser = users.find(u => u.user === user && u.pass === pass);
+
+      if (validUser) {
+        alert("Welcome " + user + " 🎉");
+      } else {
+        alert("Incorrect username or password.");
+      }
+    }
+  </script>
+</body>
+</html>

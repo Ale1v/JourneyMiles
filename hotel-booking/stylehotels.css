@@ -1,0 +1,391 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #f5f5f5;
+  color: #333;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 65px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #3a59d1;
+  font-weight: 500;
+  transition: color 0.3s;
+  font-size: 20px;
+}
+
+nav a:hover {
+  color: #7ac6d2;
+}
+
+.login-btn button {
+  background: none;
+  border: 2px solid #1a3dab;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  color: #1a3dab;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.3s;
+}
+
+.login-btn button:hover {
+  background: #3a59d1;
+  color: white;
+}
+
+/* HERO */
+.hero {
+  padding-top: 100px;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('img/inicio.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.hero__text-box {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 2rem 3rem;
+  border-radius: 15px;
+  z-index: 2;
+}
+
+.hero__text-box h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+}
+
+/* BOOKING CONTAINER */
+.booking__container {
+  width: 1100px;
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  display: flex;
+  gap: 1rem;
+  z-index: 3;
+  flex-wrap: wrap;
+}
+
+.booking__form {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-button {
+  background-color: #3056D3;
+  color: white;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 220px;
+  text-align: center;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #3056D3;
+  width: 100%;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: white;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* SWIPER */
+.swiper {
+  width: 90%;
+  padding: 60px 20px;
+
+}
+
+.swiper-slide {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 300px;
+}
+
+.room-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.room-content {
+  padding: 16px;
+}
+
+.room-content h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.room-content p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.room-content span {
+  font-weight: bold;
+  color: #000;
+}
+
+.room-content button {
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.room-content button:hover {
+  background-color: #2c3c9a;
+}
+
+.icon-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.icon-row i {
+  font-size: 20px;
+  color: #666;
+  cursor: pointer;
+}
+.info-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 20px;
+  background-color: #fff;
+  max-width: 1200px;
+  margin: 50px auto;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.info-image {
+  flex: 1;
+  height: 350px;
+  background: url('img/hotel_costarica.jpg') center/cover no-repeat;
+  border-radius: 20px;
+}
+
+.info-text {
+  flex: 1;
+}
+
+.info-text h2 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.info-text ul {
+  list-style: disc;
+  padding-left: 30px;
+  font-size: 18px;
+  color: #333;
+}
+
+.info-text li {
+  margin-bottom: 10px;
+}
+
+    .package-container {
+      background-color: #fff;
+      margin: 50px auto;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      max-width: 1200px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .package-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+      padding-bottom: 10px;
+    }
+
+    .cards-wrapper {
+            justify-content: center;
+      align-items: center;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      max-height: 240px;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+    }
+
+    .card {
+      background-color: #fff;
+      flex: 0 0 auto;
+      width: 500px;
+      height: 240px;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 12px;
+      padding: 8px;
+    }
+
+    .card img {
+      height: 150px;
+      width: 180px;
+      margin-bottom: 5px;
+    }
+
+    /* Checkbox invisible */
+    #toggle {
+      background-color: white;
+      display: none;
+    }
+
+    /* Al marcar el checkbox, se expande */
+    #toggle:checked ~ .cards-wrapper {
+      max-height: 1000px;
+      background-color: white;
+    }
+
+    .see-more {
+      font-size: 14px;
+      cursor: pointer;
+      color: #3f51b5;
+      text-align: right;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    button{
+      background-color: #3f51b5;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 5px;
+    }
+/* FOOTER */
+footer {
+  background-color: #3c4c8d;
+  color: white;
+  padding: 40px 20px;
+  font-family: sans-serif;
+}
+
+footer h3, footer h4 {
+  margin-bottom: 10px;
+}
+
+footer p, footer a {
+  line-height: 1.6;
+  color: white;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer .icon {
+  font-family: sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+footer hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 30px 0;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+

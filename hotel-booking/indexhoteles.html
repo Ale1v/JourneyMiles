@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotels</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="stylehotels.css" />
+  <link rel="icon" href="logo-expo  (2).png" type="image/png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="logo-expoJ.png" alt="Journey Miles Logo" />
+    </div>
+    <nav>
+      <ul>
+        <li><a href="../JourneyD/IndexD.html">Home</a></li>
+        <li><a href="../JourneyD/IndexVuelo.html">Flights</a></li>
+        <li><a href="indexhoteles.html">Hotels</a></li>
+        <li><a href="../aboutus_jm/about_index.html">About Us</a></li>
+      </ul>
+    </nav>
+    <div class="login-btn">
+      <a href="../formulario.html">
+      <button><i class="fas fa-user"></i>Login</button>
+      </a>
+    </div>
+  </header>
+
+  <!-- inicio -->
+  <section class="hero" id="inicio">
+    <div class="hero__text-box">
+      <h1>Make Yourself At Home<br>In Our Hotel!</h1>
+    </div>
+
+    <section class="section__container booking__container">
+      <div style="margin: 10px; padding-left: 230px;">
+        <label for="check-in">
+          <h2 style="font-family: sans-serif; font-size: 30px; text-align: center;">
+            Select the country you want to stay in
+          </h2>
+        </label>
+        <br>
+        <div class="dropdown">
+          <button class="dropdown-button">
+            <h4 style="font-size: 15px;">Select the country</h4>
+          </button>
+          <div class="dropdown-content">
+            <a href="elsalvador.html">El Salvador</a>
+            <a href="honduras.html">Honduras</a>
+            <a href="nicaragua.html">Nicaragua</a>
+            <a href="costarica.html">Costa Rica</a>
+            <a href="panama.html">Panamá</a>
+            <a href="guatemala.html">Guatemala</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!--este div es para dejar espacio ES IMPORTANTE NO TOCAR-->
+  <div style="height: 80px;">
+    <br>
+  </div>
+  
+  <!-- CARRUSEL -->
+  <div class="swiper mySwiper" id="hoteles" >
+    <h1 style="text-align: center;">The most popular hotels</h1>
+    <br>
+    <div class="swiper-wrapper" >
+
+      <!-- Carrusel hotel por cada pais -->
+      <div class="swiper-slide room-card">
+        <img src="elsalvador/picture-san-salvador-hotel-miramonte-1.jpeg">
+        <div class="room-content">
+          <h3>Miramonte Hotel</h3>
+          <p>El Salvador</p>
+          <button><a href="https://miramonte.sansalvador-city-hotels.com/es/">See more</a></button>
+        </div>
+      </div>
+
+      <div class="swiper-slide room-card">
+        <img src="honduras/hotel copantl.jpg">
+        <div class="room-content">
+          <h3>Copantl Hotel </h3>
+          <p>Honduras</p>
+          <button><a href="//www.copantl.com/">See more</a></button>
+        </div>
+      </div>
+
+      <div class="swiper-slide room-card">
+        <img src="guatemala/porta-hotel-antigua-hi-res-14.jpg">
+        <div class="room-content">
+          <h3> Porta Hotel Antigua</h3>
+          <p>Guatemala</p>
+          <button><a href="https://www.portahotels.com/">See more</a></button>
+        </div>
+      </div>
+
+      <div class="swiper-slide room-card">
+        <img src="costarica/costa1.jpg">
+        <div class="room-content">
+          <h3>Presidente Hotel </h3>
+          <p>Costa Rica</p>
+          <button><a href="https://www.hotel-presidente.com/es/">See more</a></button>
+        </div>
+      </div>
+
+      <div class="swiper-slide room-card">
+        <img src="Nicaragua/22.jpeg">
+        <div class="room-content">
+          <h3>Nicté Hotel</h3>
+          <p>Nicaragua</p>
+          <button><a href="https://www.hotelnicte.com/">See more</a></button>
+        </div>
+      </div>
+
+      <div class="swiper-slide room-card">
+        <img src="panama/hotel1.jpg">
+        <div class="room-content">
+          <h3>Waldorf Astoria</h3>
+          <p>Panamá</p>
+          <button><a href="https://www.hilton.com/es/hotels/ptytpwa-waldorf-astoria-panama/">See more</a></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- imagen con info -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+   <div class="info-section">
+    <div class="info-image"></div>
+    <div class="info-text">
+      <h2>Strive Only For The Best.</h2>
+      <ul>
+        <li>High Class Security</li>
+        <li>24 Hours Room Service</li>
+        <li>Tourist Guide Support</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="package-container">
+  <div class="package-header">
+    <span>Explore our packages</span>
+    <label for="toggle" class="see-more">See more</label>
+  </div>
+
+  <!-- oculto -->
+  <input type="checkbox" id="toggle">
+
+  <!-- Tarjetas de contenido -->
+  <div class="cards-wrapper">
+    <div class="card">
+      <img src="img/Beaches-All-Inclusive.jpg" alt="Logo 1">
+      <h2>All inclusive.</h2>
+      <p>Enjoy a worry-free vacation with all-inclusive service, including flights and hotels, taxi-service, meals, drinks, and activities. Perfect for relaxing and enjoying yourself without limits.</p>
+      <button><a href="../JourneyD/AgendaHotel.html">Book now</a></button>
+    </div>
+    <div class="card">
+      <img src="img/taxi service.jpg" alt="Logo 2">
+      <h2>Taxi service.</h2>
+      <p>Travel comfortably and safely. Our taxi service is available 24/7 for airport transfers, airport-to-hotel transfers, sightseeing tours, or local travel.</p>
+      <button><a href="../JourneyD/AgendaHotel.html">Book now</a></button>
+    </div>
+    <div class="card">
+      <img src="img/Tour-Guide.png" alt="Logo 3">
+      <h2>Tour guide.</h2>
+      <p>Explore like a local with the help of our professional tour guides. Learn the secrets, history, and culture of each destination.</p>
+      <button><a href="../JourneyD/AgendaHotel.html">Book now</a></button>
+    </div>
+    <div class="card">
+      <img src="img/driver.webp" alt="Logo 4">
+      <h2>Driver.</h2>
+      <p>Hire a professional private driver for your trips or meetings. Ideal for those who value punctuality and comfort on the road.</p>
+      <button><a href="../JourneyD/AgendaHotel.html">Book now</a></button>
+    </div>
+  </div>
+</div>
+
+<!--footer-->
+<footer style="background-color: #3c4c8d; color: white; padding: 40px 20px; font-family: sans-serif;">
+  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px;">
+    <div style="flex: 1 1 350px;width: 150px;">
+      <h3 style="margin-bottom: 0px; font-size: 1.2rem;margin-left: 0px;">Journey Miles</h3>
+      <p style="margin: 0; line-height: 1.9;color:white;padding-top: 5px;margin-left: 0px;">
+        Your best ally for booking <strong>flights</strong>,<strong>hotels</strong>
+        ,and packages 
+        <br>
+        <strong>just in one click</strong>.
+      </p>
+    </div>
+    <div style="flex: 1 1 110px;">
+<img src="logo-expo  (2).png" style="height: 90px;width: 90px;align-items: center;margin-top: 10px;">
+    </div>
+    
+    <div style="flex: 1 1 150px;">
+      <h4 style="margin-bottom: 10px; font-size: 1.1rem;">Contact Us</h4>
+      <p style="margin: 5px 0;color:white;">You can follow us for more updates and offers</p>
+      <!-- Redes sociales -->
+      <div style="margin-top: 15px;">
+        <a href="https://www.facebook.com/profile.php?id=61578978981952&mibextid=ZbWKwL" class="icon" style="color: white; margin-right: 10px; font-size: 1.2rem;padding-top: 40px;">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/journey._.miles?igsh=MTE5djgyNWFtNWkzeg=="  class="icon" style="color: white; margin-right: 10px; font-size: 1.2rem;padding-top: 40px;">
+          <i class="fab fa-instagram"></i>
+        <a href="https://x.com/JourneyMiles20?t=TZRrLciJ--6ZsFZ_HCcwTg&s=09" class="icon" style="color: white; margin-right: 10px; font-size: 1.2rem;">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.tiktok.com/@journey.miles3?_t=ZM-8yMjxM4UCSz&_r=1" class="icon" style="color: white; font-size: 1.2rem;padding-top: 40px;">
+          <i class="fab fa-tiktok"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+  <div style="align-content: center;">
+    <p style="text-align: center;margin-top: 20px;">2025 <strong>Journey Miles</strong>. All rights reserved.</p>
+</div>
+</footer>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      loop: true,
+      pagination: { el: ".swiper-pagination", clickable: true },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        0: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
+      }
+    });
+  </script>
+</body>
+</html>

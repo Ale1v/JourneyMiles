@@ -1,0 +1,316 @@
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+body {
+  background: #f5f5f5;
+  color: #333;
+}
+
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 0.1rem 5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 73px;
+
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+a{
+    text-decoration: none;
+}
+
+nav a {
+  text-decoration: none;
+  color:   #3a59d1;
+  font-weight: 500;
+  transition: color 0.3s;
+  font-size: 20px;
+  justify-content: space-between;
+}
+
+nav a:hover {
+  color: #7ac6d2;
+}
+
+.login-btn button {
+  background: none;
+  border: 2px solid #1a3dab;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  color: #1a3dab;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.3s;
+}
+
+.login-btn button:hover {
+  background: #3a59d1;
+  color: white;
+}
+
+
+
+    :root {
+            --azul-principal: #3a59d1;
+            --azul-claro: #f0f4ff;
+            --texto-oscuro: #333;
+            --texto-medio: #666;
+            --fondo-claro: #f9f9f9;
+            --blanco: #fff;
+        }
+
+        
+
+        .texto-azul-principal {
+            color: var(--azul-principal) !important;
+        }
+
+        .fondo-azul-claro {
+            background-color: var(--azul-claro) !important;
+        }
+
+        .redondeado-xl {
+            border-radius: 1rem !important;
+        }
+
+        h2 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: var(--azul-principal);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--azul-principal);
+            margin-bottom: 2.5rem;
+        }
+
+        p {
+            font-size: 1rem;
+            max-width: 700px;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .destacado {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--texto-medio);
+            margin-bottom: 1rem;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--azul-claro) 0%, var(--blanco) 100%);
+            padding: 5rem 0;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero .contenedor-imagen-hero {
+            padding: 0.5rem;
+        }
+
+        .hero .contenedor-imagen-hero img {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .imagen-centrada {
+            max-width: 600px;
+            margin: 2rem auto;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        }
+
+     
+        .seccion-con-imagen .col-lg-6:nth-child(even) {
+            order: 1; 
+        }
+        .seccion-con-imagen .col-lg-6:nth-child(odd) {
+            order: 2; 
+        }
+        .seccion-con-imagen .col-lg-6:first-child {
+            order: unset; 
+        }
+
+        .tarjeta-mision-vision, .miembro-equipo, .item-valor {
+            background-color: var(--blanco);
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+            padding: 2rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .tarjeta-mision-vision:hover, .miembro-equipo:hover, .item-valor:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        .tarjeta-mision-vision i, .item-valor i {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--azul-principal);
+        }
+        .tarjeta-mision-vision h4, .item-valor h4, .miembro-equipo h4 {
+            font-size: 1.6rem;
+            color: var(--azul-principal);
+            margin-bottom: 0.7rem;
+        }
+
+        .seccion-contenido ul li {
+            font-size: 1rem;
+            margin-bottom: 0.6rem;
+        }
+        .seccion-contenido ul li i {
+            font-size: 1.2rem;
+            margin-right: 0.8rem;
+            color: var(--azul-principal);
+        }
+
+        .seccion-imagen-col {
+            padding: 0.5rem;
+        }
+        .seccion-imagen-col img {
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        }
+
+        @keyframes aparecerArriba { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes aparecerDerecha { from { opacity: 0; transform: translateX(15px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes aparecerEscala { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
+        @keyframes aparecer { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes aparecerIzquierda { from { opacity: 0; transform: translateX(-15px); } to { opacity: 1; transform: translateX(0); } }
+
+
+        @media (max-width: 991px) {
+            .hero h2 { font-size: 2.8rem; }
+            .hero .destacado { font-size: 1.1rem; }
+            h3 { font-size: 2rem; margin-bottom: 2rem;}
+            p { font-size: 0.95rem; }
+            .seccion-padding { padding: 3rem 0; }
+            .tarjeta-mision-vision, .miembro-equipo, .item-valor { padding: 1.5rem; margin-bottom: 1rem; }
+            .tarjeta-mision-vision h4, .item-valor h4 { font-size: 1.4rem; }
+            .tarjeta-mision-vision i, .item-valor i { font-size: 2rem; }
+            .miembro-equipo img { width: 80px; height: 80px; }
+
+         
+            .seccion-con-imagen .col-lg-6:nth-child(even),
+            .seccion-con-imagen .col-lg-6:nth-child(odd) {
+                order: unset !important; 
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero h2 { font-size: 2.2rem; }
+            .hero .destacado { font-size: 1rem; }
+            h3 { font-size: 1.8rem; }
+            p { font-size: 0.9rem; }
+            .seccion-padding { padding: 2.5rem 0; }
+            .imagen-centrada { max-width: 100%; margin: 1.5rem auto; }
+            .miembro-equipo, .item-valor, .tarjeta-mision-vision { margin-bottom: 1.25rem; }
+        }
+
+
+
+
+    
+        footer {
+            background-color: var(--azul-principal); 
+            color: var(--blanco);
+            padding: 40px 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        footer h3 {
+            color: var(--blanco);
+            margin-bottom: 15px;
+            font-size: 1.8rem; 
+            font-weight: 700;
+        }
+        footer h4 {
+            color: var(--blanco);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        footer p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--blanco); 
+            margin-bottom: 10px;
+            max-width: none; 
+        }
+        footer a {
+            color: var(--blanco);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: var(--azul-claro);
+        }
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            line-height: 2;
+        }
+        footer .social-icons a {
+            margin-right: 15px;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        footer .social-icons a:hover {
+            transform: translateY(-3px);
+            color: var(--azul-claro);
+        }
+        footer hr {
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 30px 0;
+
+        }
+        footer .container > div {
+            flex: 1 1 auto;
+            min-width: 200px; 
+        }
+        @media (max-width: 768px) {
+            footer .container {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            footer .container > div {
+                min-width: unset; 
+            }
+            footer .social-icons {
+                margin-top: 15px;
+                display: flex;
+                justify-content: center;
+            }
+            footer .social-icons a {
+                margin: 0 8px;
+            }
+        }
