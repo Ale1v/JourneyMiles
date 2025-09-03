@@ -244,6 +244,13 @@
         1024: { slidesPerView: 3 }
       }
     });
+ const menuToggle = document.querySelector('.menu-toggle');
+const navUl = document.querySelector('nav ul');
+
+menuToggle && menuToggle.addEventListener('click', () => {
+  navUl.classList.toggle('open');
+});
+    
   </script>
 </body>
 </html>
