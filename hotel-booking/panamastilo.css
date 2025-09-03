@@ -187,6 +187,10 @@ a {
   transition: background-color 0.3s ease;
 }
 
+.hotel-info button:hover {
+  background-color: #334ecc;
+}
+
 /* ======= NAVBAR / MENU ======= */
 .firts {
   display: flex;
@@ -202,8 +206,14 @@ a {
   flex-wrap: wrap;
 }
 
+/* Logo */
 .logo img {
   height: 65px;
+}
+
+/* Nav menu */
+nav {
+  position: relative;
 }
 
 nav ul {
@@ -216,6 +226,7 @@ nav ul {
   margin: 0;
 }
 
+/* Links */
 nav a {
   text-decoration: none;
   color: #3a59d1;
@@ -228,6 +239,7 @@ nav a:hover {
   color: #7ac6d2;
 }
 
+/* Login button */
 .login-btn button {
   background: none;
   border: 2px solid #1a3dab;
@@ -247,15 +259,25 @@ nav a:hover {
   color: white;
 }
 
-.icon {
-  font-family: sans-serif;
-  font-weight: bold;
-  margin: 0 8px;
-  text-decoration: none;
-  color: #fff;
+/* Mobile menu toggle button */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  justify-content: space-between;
 }
 
-/* ========== MEDIA QUERIES ========== */
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #3a59d1;
+  border-radius: 3px;
+}
+
+/* ========= MEDIA QUERIES ========= */
 
 /* 🖥 Tablets (≤1024px) */
 @media (max-width: 1024px) {
@@ -294,19 +316,45 @@ nav a:hover {
     font-size: 16px;
   }
 
+  /* Nav becomes vertical and hidden by default */
   nav ul {
     flex-direction: column;
-    align-items: center;
+    background: white;
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 200px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+  }
+
+  nav ul.open {
+    max-height: 500px; /* enough height to show items */
   }
 
   nav a {
     font-size: 18px;
+    padding: 12px 20px;
+    display: block;
   }
 
   .firts {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  /* Show hamburger menu */
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Hide login button inside nav on small */
+  .login-btn {
+    margin-left: 0;
   }
 }
 
@@ -342,5 +390,10 @@ nav a:hover {
 
   .logo img {
     height: 50px;
+  }
+
+  nav ul {
+    width: 150px;
+    top: 55px;
   }
 }
