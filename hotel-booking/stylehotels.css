@@ -1,112 +1,47 @@
-/* ====== ESTILOS BASE ====== */
-* {
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+  background-color: #ffffff;
 }
 
-body {
-  background: #f5f5f5;
-  color: #333;
+.header {
+  position: relative;
+  text-align: center;
+  color: white;
 }
 
 a {
   text-decoration: none;
-  color: white;
 }
 
-/* ====== HEADER ====== */
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #fff;
-  padding: 1rem 2rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  flex-wrap: wrap;
+.header img {
+  width: 95%;
+  height: 550px;
 }
 
-.logo img {
-  height: 65px;
+.header-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 30px;
+  font-size: 36px;
+  font-weight: bold;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 0;
-  margin: 0;
-}
-
-nav a {
-  text-decoration: none;
-  color: #3a59d1;
-  font-weight: 500;
-  transition: color 0.3s;
-  font-size: 20px;
-}
-
-nav a:hover {
-  color: #7ac6d2;
-}
-
-.login-btn button {
-  background: none;
-  border: 2px solid #1a3dab;
-  padding: 0.4rem 1rem;
-  border-radius: 8px;
-  color: #1a3dab;
-  font-weight: 600;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: background 0.3s;
-}
-
-.login-btn button:hover {
-  background: #3a59d1;
-  color: white;
-}
-
-/* ====== HERO ====== */
-.hero {
-  padding-top: 100px;
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background: url('img/inicio.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+.section-title {
   text-align: center;
+  margin: 30px 0 10px;
+  font-weight: bold;
+  font-size: 24px;
 }
 
-.hero__text-box {
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  padding: 2rem 3rem;
-  border-radius: 15px;
-  z-index: 2;
-}
-
-.hero__text-box h1 {
-  font-size: 3rem;
-  line-height: 1.2;
-}
-
-/* ====== BOOKING CONTAINER ====== */
+/* BOOKING CONTAINER */
 .booking__container {
-  width: 100%;
-  max-width: 1100px;
+  width: 1100px;
   position: absolute;
   bottom: -50px;
   left: 50%;
@@ -119,7 +54,6 @@ nav a:hover {
   gap: 1rem;
   z-index: 3;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .booking__form {
@@ -127,10 +61,9 @@ nav a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  justify-content: center;
 }
 
-/* ====== DROPDOWN ====== */
+/* DROPDOWN */
 .dropdown {
   position: relative;
   display: inline-block;
@@ -160,6 +93,24 @@ nav a:hover {
 .dropdown-content a {
   color: white;
   padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: white;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  width: 220px;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 10px 16px;
+  text-decoration: none;
   display: block;
 }
 
@@ -172,195 +123,142 @@ nav a:hover {
   display: block;
 }
 
-/* ====== SWIPER ====== */
-.swiper {
-  width: 90%;
-  padding: 60px 20px;
+/**cards**/
+.center-container {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
 }
 
-.swiper-slide {
-  background: #fff;
+.hotel-card {
+  display: flex;
+  background: white;
   border-radius: 12px;
+  padding: 20px;
+  max-width: 85%;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  overflow: hidden;
-  width: 300px;
+  gap: 20px;
 }
 
-.room-card img {
+.hotel-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  flex: 1;
+}
+
+.hotel-images img {
   width: 100%;
-  height: 180px;
+  height: 150px;
   object-fit: cover;
+  border-radius: 10px;
 }
 
-.room-content {
-  padding: 16px;
+.hotel-info {
+  flex: 2;
 }
 
-.room-content h3 {
-  margin: 0 0 8px;
+.hotel-info h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  font-size: 24px;
+}
+
+.hotel-info p {
+  text-align: justify;
   font-size: 18px;
+  color: #444;
+  margin: 10px 0 20px 0;
 }
 
-.room-content p {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 10px;
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
-.room-content span {
-  font-weight: bold;
-  color: #000;
-}
-
-.room-content button {
-  background-color: #3f51b5;
+.hotel-info button {
+  background-color: #4460FF;
   color: white;
   border: none;
+  border-radius: 10px;
   padding: 8px 16px;
-  border-radius: 6px;
+  font-weight: bold;
+  font-size: 14px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/**menu**/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.firts {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 65px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #3a59d1;
+  font-weight: 500;
+  transition: color 0.3s;
+  font-size: 20px;
+  justify-content: space-between;
+}
+
+nav a:hover {
+  color: #7ac6d2;
+}
+
+.login-btn button {
+  background: none;
+  border: 2px solid #1a3dab;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  color: #1a3dab;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   transition: background 0.3s;
 }
 
-.room-content button:hover {
-  background-color: #2c3c9a;
-}
-
-.icon-row {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  padding: 10px 0;
-}
-
-.icon-row i {
-  font-size: 20px;
-  color: #666;
-  cursor: pointer;
-}
-
-/* ====== INFO SECTION ====== */
-.info-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  padding: 60px 20px;
-  background-color: #fff;
-  max-width: 1200px;
-  margin: 50px auto;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  flex-wrap: wrap;
-}
-
-.info-image {
-  flex: 1;
-  height: 350px;
-  background: url('img/hotel_costarica.jpg') center/cover no-repeat;
-  border-radius: 20px;
-  min-width: 300px;
-}
-
-.info-text {
-  flex: 1;
-  min-width: 300px;
-}
-
-.info-text h2 {
-  font-size: 40px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.info-text ul {
-  list-style: disc;
-  padding-left: 30px;
-  font-size: 18px;
-  color: #333;
-}
-
-.info-text li {
-  margin-bottom: 10px;
-}
-
-/* ====== PACKAGES ====== */
-.package-container {
-  background-color: #fff;
-  margin: 50px auto;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  padding: 15px;
-  max-width: 1200px;
-  overflow: hidden;
-  position: relative;
-}
-
-.package-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: bold;
-  padding-bottom: 10px;
-  flex-wrap: wrap;
-}
-
-.cards-wrapper {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  max-height: 240px;
-  overflow: hidden;
-  transition: max-height 0.5s ease;
-}
-
-.card {
-  background-color: #fff;
-  flex: 0 0 auto;
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 12px;
-  padding: 8px;
-}
-
-.card img {
-  height: 150px;
-  width: 180px;
-  margin-bottom: 5px;
-}
-
-#toggle {
-  background-color: white;
-  display: none;
-}
-
-#toggle:checked ~ .cards-wrapper {
-  max-height: 1000px;
-  background-color: white;
-}
-
-.see-more {
-  font-size: 14px;
-  cursor: pointer;
-  color: #3f51b5;
-  text-align: right;
-  display: inline-block;
-  margin-top: 10px;
-}
-
-button {
-  background-color: #3f51b5;
+.login-btn button:hover {
+  background: #3a59d1;
   color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 6
+}
+
+.icon {
+  font-family: sans-serif;
+  font-weight: bold;
+  margin: 0 8px;
+  text-decoration: none;
+  color: #fff;
+}
