@@ -1,45 +1,53 @@
- body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #ffffff;
-    }
+/* ======= ESTILOS BASE ======= */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
 
-    .header {
-      position: relative;
-      text-align: center;
-      color: white;
-    }
-     
-    a{
-      text-decoration: none;
-    }
-    .header img {
-      width: 95%;
-      height: 550px;
-    }
+a {
+  text-decoration: none;
+}
 
-    .header-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 400px;
-      transform: translate(-50%, -50%);
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 10px 30px;
-      font-size: 36px;
-      font-weight: bold;
-    }
+.header {
+  position: relative;
+  text-align: center;
+  color: white;
+}
 
-    .section-title {
-      text-align: center;
-      margin: 30px 0 10px;
-      font-weight: bold;
-      font-size: 24px;
-    }
-/* BOOKING CONTAINER */
+.header img {
+  width: 100%;
+  height: auto;
+  max-height: 550px;
+  object-fit: cover;
+}
+
+.header-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 30px;
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.section-title {
+  text-align: center;
+  margin: 30px 0 10px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+/* ======= BOOKING CONTAINER ======= */
 .booking__container {
-  width: 1100px;
+  width: 100%;
+  max-width: 1100px;
   position: absolute;
   bottom: -50px;
   left: 50%;
@@ -47,11 +55,12 @@
   background: #fff;
   padding: 1.5rem 2rem;
   border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   display: flex;
   gap: 1rem;
   z-index: 3;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .booking__form {
@@ -59,9 +68,10 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  justify-content: center;
 }
 
-/* DROPDOWN */
+/* ======= DROPDOWN ======= */
 .dropdown {
   position: relative;
   display: inline-block;
@@ -84,7 +94,7 @@
   background-color: #3056D3;
   width: 100%;
   border-radius: 0 0 8px 8px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -102,83 +112,70 @@
 
 .dropdown:hover .dropdown-content {
   display: block;
-  width: 220px;
 }
 
-.dropdown-content a {
-  color: white;
-  padding: 10px 16px;
-  text-decoration: none;
-  display: block;
+/* ======= CARDS ======= */
+.center-container {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  flex-wrap: wrap;
 }
 
-.dropdown-content a:hover {
-  background-color: white;
-  color: black;
+.hotel-card {
+  display: flex;
+  flex-wrap: wrap;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  width: 100%;
+  max-width: 1100px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  gap: 20px;
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
+.hotel-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  flex: 1;
+  min-width: 250px;
 }
-    /**cards**/
-    .center-container {
-      display: flex;
-      justify-content: center;
-      padding: 40px;
-    }
 
-    .hotel-card {
-      display: flex;
-      background: white;
-      border-radius: 12px;
-      padding: 20px;
-      max-width: 85%;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      gap: 20px;
-    }
+.hotel-images img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
 
-    .hotel-images {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      flex: 1;
-    }
+.hotel-info {
+  flex: 2;
+  min-width: 250px;
+}
 
-    .hotel-images img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
+.hotel-info h2 {
+  margin: 0;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  padding: 30px 10px 10px;
+}
 
-    .hotel-info {
-      flex: 2;
-    }
+.hotel-info p {
+  text-align: justify;
+  font-size: 18px;
+  color: #444;
+  margin: 10px 0 20px 0;
+}
 
-    .hotel-info h2 {
-      margin: 0;
-      font-size: 1.2rem;
-      display: flex;
-      justify-content: center;
-      padding: 30px;
-      font-size: 24px;
-    }
-
-    .hotel-info p {
-      text-align: justify;
-      font-size: 18px;
-      color: #444;
-      margin: 10px 0 20px 0;
-    }
-
-    .button-wrapper {
+.button-wrapper {
   display: flex;
   justify-content: center;
   width: 100%;
 }
 
-
-   .hotel-info button {
+.hotel-info button {
   background-color: #4460FF;
   color: white;
   border: none;
@@ -190,48 +187,41 @@
   transition: background-color 0.3s ease;
 }
 
-
-
-/**menu**/
-  * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-  }
-
-    .firts {
+/* ======= NAVBAR / MENU ======= */
+.firts {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: #fff;
   padding: 1rem 2rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-
+  flex-wrap: wrap;
 }
 
 .logo img {
   height: 65px;
-
 }
 
 nav ul {
   list-style: none;
   display: flex;
   gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
 }
 
 nav a {
   text-decoration: none;
-  color:   #3a59d1;
+  color: #3a59d1;
   font-weight: 500;
   transition: color 0.3s;
   font-size: 20px;
-  justify-content: space-between;
 }
 
 nav a:hover {
@@ -262,4 +252,95 @@ nav a:hover {
   font-weight: bold;
   margin: 0 8px;
   text-decoration: none;
-  color: #fff;}
+  color: #fff;
+}
+
+/* ========== MEDIA QUERIES ========== */
+
+/* 🖥 Tablets (≤1024px) */
+@media (max-width: 1024px) {
+  .booking__container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .hotel-card {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .header-text {
+    width: 80%;
+    font-size: 28px;
+  }
+}
+
+/* 📱 Tablets y celulares (≤768px) */
+@media (max-width: 768px) {
+  .header img {
+    height: auto;
+  }
+
+  .header-text {
+    width: 90%;
+    font-size: 24px;
+  }
+
+  .dropdown-button {
+    width: 100%;
+  }
+
+  .hotel-info p {
+    font-size: 16px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    font-size: 18px;
+  }
+
+  .firts {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+/* 📱 Celulares pequeños (≤480px) */
+@media (max-width: 480px) {
+  .header-text {
+    font-size: 20px;
+    padding: 10px 15px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .hotel-info h2 {
+    font-size: 20px;
+    padding: 20px 10px;
+  }
+
+  .hotel-info p {
+    font-size: 14px;
+  }
+
+  .dropdown-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .login-btn button {
+    font-size: 14px;
+    padding: 0.3rem 0.8rem;
+  }
+
+  .logo img {
+    height: 50px;
+  }
+}
