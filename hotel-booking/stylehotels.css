@@ -1,4 +1,4 @@
-
+/* ====== ESTILOS BASE ====== */
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +11,12 @@ body {
   color: #333;
 }
 
-/* HEADER */
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* ====== HEADER ====== */
 header {
   display: flex;
   align-items: center;
@@ -23,6 +28,7 @@ header {
   top: 0;
   width: 100%;
   z-index: 1000;
+  flex-wrap: wrap;
 }
 
 .logo img {
@@ -33,6 +39,10 @@ nav ul {
   list-style: none;
   display: flex;
   gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
 }
 
 nav a {
@@ -66,7 +76,7 @@ nav a:hover {
   color: white;
 }
 
-/* HERO */
+/* ====== HERO ====== */
 .hero {
   padding-top: 100px;
   position: relative;
@@ -93,9 +103,10 @@ nav a:hover {
   line-height: 1.2;
 }
 
-/* BOOKING CONTAINER */
+/* ====== BOOKING CONTAINER ====== */
 .booking__container {
-  width: 1100px;
+  width: 100%;
+  max-width: 1100px;
   position: absolute;
   bottom: -50px;
   left: 50%;
@@ -108,6 +119,7 @@ nav a:hover {
   gap: 1rem;
   z-index: 3;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .booking__form {
@@ -115,9 +127,10 @@ nav a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  justify-content: center;
 }
 
-/* DROPDOWN */
+/* ====== DROPDOWN ====== */
 .dropdown {
   position: relative;
   display: inline-block;
@@ -147,7 +160,6 @@ nav a:hover {
 .dropdown-content a {
   color: white;
   padding: 10px 16px;
-  text-decoration: none;
   display: block;
 }
 
@@ -160,11 +172,10 @@ nav a:hover {
   display: block;
 }
 
-/* SWIPER */
+/* ====== SWIPER ====== */
 .swiper {
   width: 90%;
   padding: 60px 20px;
-
 }
 
 .swiper-slide {
@@ -227,6 +238,8 @@ nav a:hover {
   color: #666;
   cursor: pointer;
 }
+
+/* ====== INFO SECTION ====== */
 .info-section {
   display: flex;
   align-items: center;
@@ -238,6 +251,7 @@ nav a:hover {
   margin: 50px auto;
   border-radius: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
 }
 
 .info-image {
@@ -245,10 +259,12 @@ nav a:hover {
   height: 350px;
   background: url('img/hotel_costarica.jpg') center/cover no-repeat;
   border-radius: 20px;
+  min-width: 300px;
 }
 
 .info-text {
   flex: 1;
+  min-width: 300px;
 }
 
 .info-text h2 {
@@ -268,124 +284,83 @@ nav a:hover {
   margin-bottom: 10px;
 }
 
-    .package-container {
-      background-color: #fff;
-      margin: 50px auto;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      padding: 15px;
-      max-width: 1200px;
-      overflow: hidden;
-      position: relative;
-    }
+/* ====== PACKAGES ====== */
+.package-container {
+  background-color: #fff;
+  margin: 50px auto;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  max-width: 1200px;
+  overflow: hidden;
+  position: relative;
+}
 
-    .package-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-weight: bold;
-      padding-bottom: 10px;
-    }
+.package-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  padding-bottom: 10px;
+  flex-wrap: wrap;
+}
 
-    .cards-wrapper {
-            justify-content: center;
-      align-items: center;
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      max-height: 240px;
-      overflow: hidden;
-      transition: max-height 0.5s ease;
-    }
+.cards-wrapper {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  max-height: 240px;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
 
-    .card {
-      background-color: #fff;
-      flex: 0 0 auto;
-      width: 500px;
-      height: 240px;
-      border: 1px solid #ccc;
-      border-radius: 12px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      font-size: 12px;
-      padding: 8px;
-    }
+.card {
+  background-color: #fff;
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 12px;
+  padding: 8px;
+}
 
-    .card img {
-      height: 150px;
-      width: 180px;
-      margin-bottom: 5px;
-    }
+.card img {
+  height: 150px;
+  width: 180px;
+  margin-bottom: 5px;
+}
 
-    /* Checkbox invisible */
-    #toggle {
-      background-color: white;
-      display: none;
-    }
+#toggle {
+  background-color: white;
+  display: none;
+}
 
-    /* Al marcar el checkbox, se expande */
-    #toggle:checked ~ .cards-wrapper {
-      max-height: 1000px;
-      background-color: white;
-    }
+#toggle:checked ~ .cards-wrapper {
+  max-height: 1000px;
+  background-color: white;
+}
 
-    .see-more {
-      font-size: 14px;
-      cursor: pointer;
-      color: #3f51b5;
-      text-align: right;
-      display: inline-block;
-      margin-top: 10px;
-    }
-    button{
-      background-color: #3f51b5;
+.see-more {
+  font-size: 14px;
+  cursor: pointer;
+  color: #3f51b5;
+  text-align: right;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+button {
+  background-color: #3f51b5;
   color: white;
   border: none;
   padding: 8px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-top: 5px;
-    }
-/* FOOTER */
-footer {
-  background-color: #3c4c8d;
-  color: white;
-  padding: 40px 20px;
-  font-family: sans-serif;
-}
-
-footer h3, footer h4 {
-  margin-bottom: 10px;
-}
-
-footer p, footer a {
-  line-height: 1.6;
-  color: white;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-footer .icon {
-  font-family: sans-serif;
-  font-weight: bold;
-  text-decoration: none;
-  color: #fff;
-  margin-right: 10px;
-  font-size: 1.2rem;
-}
-
-footer hr {
-  border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  margin: 30px 0;
-}
-a{
-  text-decoration: none;
-  color: white;
-}
-
+  border-radius: 6
